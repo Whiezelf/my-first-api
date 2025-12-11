@@ -1,2 +1,2 @@
 # my-first-api
-My first Python FastAPI project - Learning backend development."
+My first Python FastAPI project - Learning backend development.
