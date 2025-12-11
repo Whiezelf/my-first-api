@@ -60,3 +60,54 @@ def read_todo(todo_id: int, db: Session = Depends(get_db)):
     if todo is None:
         raise HTTPException(status_code=404, detail="Todo non trovato")
     return todo
+
+@app.put("/todos/{todo_id}", response_model=TodoResponse)
+def update_todo(todo_id: int, todo_update: TodoCreate, db: Session = Depends(get_db)):
+    """
+    Aggiorna un Todo esistente.
+    """
+    # 1. Cerca il Todo nel database
+    db_todo = db.query(Todo).filter(Todo.id == todo_id).first()
+    if db_todo is None:
+        raise HTTPException(status_code=404, detail="Todo non trovato")
+    
+    # 2. Aggiorna solo i campi che ci vengono passati
+    if todo_update.title is not None:
+        db_todo.title = todo_update.title
+    if todo_update.description is not None:
+        db_todo.description = todo_update.description
+    
+    # 3. Salva le modifiche nel database
+    db.commit()
+    db.refresh(db_todo)  # Ricarica l'oggetto dal database per avere i dati aggiornati
+    return db_todo
+
+@app.delete("/todos/{todo_id}")
+def delete_todo(todo_id: int, db: Session = Depends(get_db)):
+    """
+    Elimina un Todo.
+    """
+    # 1. Cerca il Todo nel database
+    db_todo = db.query(Todo).filter(Todo.id == todo_id).first()
+    if db_todo is None:
+        raise HTTPException(status_code=404, detail="Todo non trovato")
+    
+    # 2. Eliminalo dal database
+    db.delete(db_todo)
+    db.commit()
+    
+    # 3. Restituisci una conferma semplice (senza corpo, solo status 200 OK)
+    return {"message": f"Todo con id {todo_id} eliminato con successo"}
+
+@app.get("/")
+def read_root():
+    """
+    Health Check endpoint.
+    Returns basic API information.
+    """
+    return {
+        "message": "Benvenuto nella Todo API",
+        "version": "1.0",
+        "docs": "/docs",
+        "operations": ["CREATE (POST)", "READ (GET)", "UPDATE (PUT)", "DELETE (DELETE)"]
+    }
