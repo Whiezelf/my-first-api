@@ -21,23 +21,23 @@ Una semplice ma completa API REST per gestire una lista di cose da fare (Todo), 
 ## Installazione e Avvio Locale
 
 1. **Clona il repository**
-   git clone https://github.com/Whiezelf/my-first-api.git
-   cd my-first-api
+   `git clone https://github.com/Whiezelf/my-first-api.git`
+   `cd my-first-api`
 
 2. **Crea e attiva un ambiente virtuale**
-    python -m venv venv
+    `python -m venv venv`
     # Su Windows:
-    venv\Scripts\activate
+    `venv\Scripts\activate`
     # Su Mac/Linux:
-    source venv/bin/activate
+    `source venv/bin/activate`
 
 3. **Installa le dipendenze**
-    pip install fastapi uvicorn sqlalchemy pydantic
+    `pip install fastapi uvicorn sqlalchemy pydantic`
 
 4. **Avvia il server di sviluppo**
-    uvicorn main:app --reload
+    `uvicorn main:app --reload`
 
-5. **Apri il browser all'indirizzo: http://localhost:8000/docs per utilizzare l'interfaccia Swagger UI interattiva.**
+5. **Apri il browser all'indirizzo: `http://localhost:8000/docs` per utilizzare l'interfaccia Swagger UI interattiva.**
 
 ## Prossimi Passi (Roadmap)
 
