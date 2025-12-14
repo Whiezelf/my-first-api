@@ -48,3 +48,16 @@ Una semplice ma completa API REST per gestire una lista di cose da fare (Todo), 
 
 ## Autore
 **Vincenzo Esposito/Whiezelf - https://github.com/Whiezelf**
+
+ Struttura del Progetto (Aggiornata)
+
+## Deploy
+
+Questa API è deployata su Render ed è accessibile pubblicamente:
+- **URL API:** `https://my-first-api-vtlr.onrender.com`
+- **Documentazione Interattiva:** `https://my-first-api-vtlr.onrender.com/docs`
+
+Per deployare la tua istanza:
+1.  Crea un account su [Render](https://render.com/)
+2.  Connetti il tuo repository GitHub
+3.  Render rileverà automaticamente il progetto Python e lo deployerà
