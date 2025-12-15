@@ -217,3 +217,128 @@ footer a:hover {
         gap: 15px;
     }
 }
+/* ==================== SEZIONE AUTENTICAZIONE ==================== */
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-tabs {
+    display: flex;
+    margin: 25px 0;
+    border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #777;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    color: #4776E6;
+    border-bottom-color: #4776E6;
+    font-weight: bold;
+}
+
+.auth-form {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-form.active {
+    display: flex;
+}
+
+.auth-form input {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.auth-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+}
+
+.auth-message.success {
+    background: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.auth-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+/* ==================== APP SECTION (DOPO LOGIN) ==================== */
+.app-section {
+    animation: fadeIn 0.5s ease;
+}
+
+.user-header {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#user-email {
+    font-weight: bold;
+    color: #4776E6;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgba(71, 118, 230, 0.2);
+}
+
+.logout-btn {
+    background: #6c757d;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    background: #5a6268;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

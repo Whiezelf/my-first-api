@@ -15,24 +15,64 @@
         </header>
 
         <main>
-            <section class="add-todo">
-                <h2>Add a New Task</h2>
-                <form id="todo-form">
-                    <input type="text" id="title" placeholder="What needs to be done?" required>
-                    <textarea id="description" placeholder="Additional details (optional)"></textarea>
-                    <button type="submit"><i class="fas fa-plus"></i> Add Task</button>
-                </form>
+            <!-- SEZIONE 1: LOGIN/REGISTER (visibile solo se NON loggato) -->
+            <section id="auth-section" class="auth-section">
+                <div class="auth-container">
+                    <h2><i class="fas fa-user"></i> Accedi o Registrati</h2>
+                    
+                    <div class="auth-tabs">
+                        <button class="tab-btn active" data-tab="login">Login</button>
+                        <button class="tab-btn" data-tab="register">Registrati</button>
+                    </div>
+
+                    <!-- Form Login -->
+                    <form id="login-form" class="auth-form active">
+                        <input type="email" id="login-email" placeholder="La tua email" required>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <button type="submit"><i class="fas fa-sign-in-alt"></i> Accedi</button>
+                    </form>
+
+                    <!-- Form Registrazione -->
+                    <form id="register-form" class="auth-form">
+                        <input type="email" id="register-email" placeholder="Email" required>
+                        <input type="password" id="register-password" placeholder="Password (min. 8 caratteri)" required>
+                        <button type="submit"><i class="fas fa-user-plus"></i> Crea Account</button>
+                    </form>
+
+                    <div id="auth-message" class="auth-message"></div>
+                </div>
             </section>
 
-            <section class="todo-list">
-                <div class="section-header">
-                    <h2>Your Tasks</h2>
-                    <button id="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh</button>
+            <!-- SEZIONE 2: APP PRINCIPALE (visibile solo DOPO login) -->
+            <section id="app-section" class="app-section" style="display: none;">
+                <!-- Header con info utente e logout -->
+                <div class="user-header">
+                    <div class="user-info">
+                        <span id="user-email"></span>
+                        <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
                 </div>
-                <div id="loading">Loading your tasks...</div>
-                <ul id="todos-container">
-                    <!-- Tasks will be inserted here by JavaScript -->
-                </ul>
+
+                <!-- Contenuto esistente (form todo e lista) -->
+                <section class="add-todo">
+                    <h2><i class="fas fa-plus-circle"></i> Aggiungi un Nuovo Task</h2>
+                    <form id="todo-form">
+                        <input type="text" id="title" placeholder="Cosa devi fare?" required>
+                        <textarea id="description" placeholder="Dettagli (opzionale)"></textarea>
+                        <button type="submit"><i class="fas fa-plus"></i> Aggiungi Task</button>
+                    </form>
+                </section>
+
+                <section class="todo-list">
+                    <div class="section-header">
+                        <h2><i class="fas fa-tasks"></i> I Tuoi Task</h2>
+                        <button id="refresh-btn"><i class="fas fa-sync-alt"></i> Aggiorna</button>
+                    </div>
+                    <div id="loading">Caricamento in corso...</div>
+                    <ul id="todos-container">
+                        <!-- I todo verranno inseriti qui -->
+                    </ul>
+                </section>
             </section>
         </main>
 
