@@ -45,7 +45,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
+<<<<<<< HEAD
     allow_origins=["https://my-first-api-frontend.onrender.com"],
+=======
+    allow_origins=["*"],
+>>>>>>> 44be77bc7b4dfbc2115d76f5fc4363d2dc14bc6a
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
