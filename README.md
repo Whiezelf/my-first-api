@@ -49,7 +49,7 @@ Una semplice ma completa API REST per gestire una lista di cose da fare (Todo), 
 ## Autore
 **Vincenzo Esposito/Whiezelf - https://github.com/Whiezelf**
 
- Struttura del Progetto (Aggiornata)
+## **Struttura del Progetto (Aggiornata)**
 
 ## Deploy
 
