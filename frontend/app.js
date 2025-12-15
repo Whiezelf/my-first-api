@@ -360,6 +360,18 @@ function init() {
     // Make handleDelete globally available
     window.handleDelete = handleDelete;
 
+    // Check API URL
+    const apiUrlElement = document.getElementById('api-url');
+    if (apiUrlElement) {
+        apiUrlElement.textContent = API_BASE_URL;
+    } else {
+        console.warn('Elemento con id "api-url" non trovato nel DOM.');
+    }
+    if (apiUrlElement) {
+        // Crea un link cliccabile invece di testo semplice
+        apiUrlElement.innerHTML = `<a href="${API_BASE_URL}" target="_blank" style="color: #4776E6;">${API_BASE_URL}</a>`;
+    }
+
     // Check if user is already logged in
     if (authToken) {
         // Qui potresti fare una chiamata per validare il token
