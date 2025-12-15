@@ -10,7 +10,7 @@ app = FastAPI(title="Todo API", description="Una semplice API per gestire todo",
 from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permette TUTTE le origini (solo per test!)
+    allow_origins=["https://my-first-api-frontend.onrender.com"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
