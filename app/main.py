@@ -7,6 +7,13 @@ from .models import SessionLocal, engine, Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Todo API", description="Una semplice API per gestire todo", version="1.0.0")
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permette TUTTE le origini (solo per test!)
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Dipendenza per ottenere la sessione del database
 def get_db():

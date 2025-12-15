@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> My Todo List</h1>
+            <p class="subtitle">A simple frontend for your FastAPI backend. API URL: <code id="api-url">Loading...</code></p>
+        </header>
+
+        <main>
+            <section class="add-todo">
+                <h2>Add a New Task</h2>
+                <form id="todo-form">
+                    <input type="text" id="title" placeholder="What needs to be done?" required>
+                    <textarea id="description" placeholder="Additional details (optional)"></textarea>
+                    <button type="submit"><i class="fas fa-plus"></i> Add Task</button>
+                </form>
+            </section>
+
+            <section class="todo-list">
+                <div class="section-header">
+                    <h2>Your Tasks</h2>
+                    <button id="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh</button>
+                </div>
+                <div id="loading">Loading your tasks...</div>
+                <ul id="todos-container">
+                    <!-- Tasks will be inserted here by JavaScript -->
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Backend powered by <strong>FastAPI</strong> | Deployed on <strong>Render</strong></p>
+            <p>View the <a href="/docs" target="_blank">API Documentation (Swagger UI)</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
