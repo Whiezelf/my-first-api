@@ -59,7 +59,7 @@ L'applicazione è completamente deployata e accessibile pubblicamente:
 | **Hosting**      | Render (Web Service + Static Site)   | Deployment gratuito e scalabile        |
 | **Versioning**   | Git + GitHub                         | Controllo versione e CI/CD             |
 
-## **Installazione e Esecuzione Locale**
+# **Installazione e Esecuzione Locale**
 
 ### Prerequisiti
 - Python 3.10 o superiore
@@ -67,31 +67,31 @@ L'applicazione è completamente deployata e accessibile pubblicamente:
 - Browser moderno
 
 
-1. **Clona il repository**
-   `git clone https://github.com/Whiezelf/my-first-api.git`
-   `cd my-first-api`
+## 1. **Clona il repository**
+`git clone https://github.com/Whiezelf/my-first-api.git`
+`cd my-first-api`
 
-2. **Crea e attiva un ambiente virtuale**
-    `python -m venv venv`
-    # Su Windows:
-    `venv\Scripts\activate`
-    # Su Mac/Linux:
-    `source venv/bin/activate`
-    # Installa le dipendenze
-    `pip install -r requirements.txt`
+## 2. **Crea e attiva un ambiente virtuale**
+`python -m venv venv`
+### Su Windows:
+`venv\Scripts\activate`
+### Su Mac/Linux:
+`source venv/bin/activate`
+### Installa le dipendenze
+`pip install -r requirements.txt`
 
-3. **Avvia il server backend**
-    `python run.py`
+## 3. **Avvia il server backend**
+`python run.py`
 
-4. **Avvia il Frontend**
-    Apri semplicemente il file frontend/index.html nel tuo browser, oppure usa un server locale:
-    # Con Python
-    `python -m http.server 3000 --directory frontend`
+## 4. **Avvia il Frontend**
+Apri semplicemente il file frontend/index.html nel tuo browser, oppure usa un server locale:
+### Con Python
+`python -m http.server 3000 --directory frontend`
 
-    # Con Node.js (se installato)
-    `npx serve frontend`
+### Con Node.js (se installato)
+`npx serve frontend`
 
-### Deployment su Render
+## Deployment su Render
 **Backend (Web Service)**
 1. Crea un account su render.com
 2. Clicca "New +" → "Web Service"
@@ -102,14 +102,14 @@ L'applicazione è completamente deployata e accessibile pubblicamente:
     * Start Command: uvicorn app.main:app --host 0.0.0.0 --port $PORT
 5. Aggiungi variabili d'ambiente:
     - KEY (genera una chiave casuale sicura)
-### Frontend (Static Site)
+## Frontend (Static Site)
 1. Clicca "New +" → "Static Site"
 2. Connetti lo stesso repository
 3. Configura:
     * Build Command: (lascia vuoto)
     * Publish Directory: frontend
 
-### Prossimi Sviluppi (Roadmap)
+# Prossimi Sviluppi (Roadmap)
 + **Test automatici con pytest per backend**
 + **Dark mode toggle nel frontend**
 + **Ricerca e filtri per i todo**
@@ -118,7 +118,7 @@ L'applicazione è completamente deployata e accessibile pubblicamente:
 + **Containerizzazione con Docker**
 + **CI/CD pipeline con GitHub Actions**
 
-👨‍💻 Autore
+## Autore
 Vincenzo Esposito/Whiezelf - Sviluppatore Full-Stack in formazione - GitHub [https://github.com/Whiezelf]
 
 Progetto parte di un percorso di apprendimento intensivo in sviluppo web
